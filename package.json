@@ -15,7 +15,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "tsc --noEmit && eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx"
+    "lint": "tsc --noEmit && eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx",
+    "start:ci": "react-scripts start",
+    "build:ci": "react-scripts build",
+    "test:ci": "react-scripts test",
+    "eject:ci": "react-scripts eject",
+    "lint:ci": "tsc --noEmit && eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx"
   },
   "eslintConfig": {
     "extends": "react-app"
