@@ -1,0 +1,15 @@
+src/serviceWorker.ts
+src/**/__tests__/**
+build/
+coverage/
+docs/**
+tmp/**
+public/
+*-test.js,
+*.spec.js,
+*-test.jsx,
+*.spec.jsx,
+*-test.ts,
+*.spec.ts,
+*-test.tsx,
+*.spec.tsx
