@@ -1,6 +1,6 @@
 src/serviceWorker.ts
 src/react-app-env.d.ts
-src/serviceWorker.ts
+src/setupTest.ts
 src/**/__tests__/**
 build/
 coverage/
