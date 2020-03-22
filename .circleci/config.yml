@@ -1,0 +1,47 @@
+version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/lime-app
+    docker:
+      - image: circleci/node:12.9.1-browsers
+    steps:
+      - checkout
+
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          key: lime-app-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install Dependencies
+          command: yarn install
+
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: lime-app-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+            - ./node_modules
+
+      - run:
+          name: React build
+          command: yarn run build:ci
+
+      - run:
+          name: React Unit Test
+          command: yarn run test:ci
+
+      ##- run:
+      ##    name: React E2E Test
+      ##    command: yarn run e2e:ci
+
+      - run:
+          name: React lint
+          command: yarn run lint:ci
+
+      - store_test_results:
+          path: test-results/junit
+
+      - store_artifacts:
+          path: test-results/junit
+          destination: test
