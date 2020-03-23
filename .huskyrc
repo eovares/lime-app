@@ -1,7 +1,7 @@
 {
   "hooks": {
     "pre-commit": "yarn pre-commit",
-    "pre-push": "yarn pre-push",
+    "pre-push": "yarn pre-push --no-verify",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
