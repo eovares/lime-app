@@ -17,8 +17,6 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "extends": [
-    "react-app",
-    "shared-config",
     "plugin:react/recommended",
     "airbnb",
     "plugin:prettier/recommended",
@@ -26,7 +24,6 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "additional-rule": "warn",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -45,14 +42,6 @@
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ]
   },
-  "overrides": [
-    {
-      "files": ["**/*.ts?(x)"],
-      "rules": {
-        "additional-typescript-only-rule": "warn"
-      }
-    }
-  ],
   "settings": {
     "import/resolver": {
       "node": {
