@@ -10,6 +10,11 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+ "lint-staged": {
+   "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+     "prettier --write"
+   ]
+ },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -52,7 +57,15 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
+    "husky": "^4.2.3",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.0.1",
+    "lint-staged": "^10.0.8",
     "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
