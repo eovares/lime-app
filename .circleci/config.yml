@@ -39,9 +39,13 @@ jobs:
           name: React lint
           command: yarn run lint:ci
 
-      - store_test_results:
-          path: test-results/junit
+      - store_artifacts:
+          path: test-results.xml
+          prefix: tests
 
       - store_artifacts:
-          path: test-results/junit
-          destination: test
+          path: coverage
+          prefix: coverage
+
+      - store_test_results:
+          path: test-results.xml
