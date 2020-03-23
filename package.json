@@ -15,12 +15,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "format": "prettier --write \"./**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format-check": "prettier --list-different \"./**/*.{ts,tx,js,jsx,json,md}\"",
     "lint": "tsc --noEmit && eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx --quiet",
+    "lint-fix": "tsc --noEmit && eslint --ignore-path .eslintignore . --ext ts,tsx,js,jsx --quiet  --fix",
     "start:ci": "react-scripts start",
     "build:ci": "react-scripts build",
     "test:ci": "react-scripts test",
     "eject:ci": "react-scripts eject",
-    "lint:ci": "tsc --noEmit && eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx --quiet"
+    "lint:ci": "tsc --noEmit && eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx --quiet",
+    "pre-commit": "yarn lint-staged",
+    "pre-push": "yarn format-check"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -57,11 +62,6 @@
     "prettier": "^2.0.1",
     "lint-staged": "^10.0.8",
     "typescript": "^3.8.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsc --noEmit && lint-staged"
-    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
